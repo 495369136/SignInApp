@@ -1,0 +1,10 @@
+D:\ProjectGit\SignInApp\Log\bin\x86\Debug\log4net.config
+D:\ProjectGit\SignInApp\Log\bin\x86\Debug\Log.dll
+D:\ProjectGit\SignInApp\Log\bin\x86\Debug\Log.pdb
+D:\ProjectGit\SignInApp\Log\bin\x86\Debug\log4net.dll
+D:\ProjectGit\SignInApp\Log\bin\x86\Debug\log4net.xml
+D:\ProjectGit\SignInApp\Log\obj\x86\Debug\Log.csprojAssemblyReference.cache
+D:\ProjectGit\SignInApp\Log\obj\x86\Debug\Log.csproj.CoreCompileInputs.cache
+D:\ProjectGit\SignInApp\Log\obj\x86\Debug\Log.csproj.CopyComplete
+D:\ProjectGit\SignInApp\Log\obj\x86\Debug\Log.dll
+D:\ProjectGit\SignInApp\Log\obj\x86\Debug\Log.pdb

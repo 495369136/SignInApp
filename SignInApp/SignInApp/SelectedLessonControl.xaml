@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="SignInApp.SelectedLessonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SignInApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="86" d:DesignWidth="1535" Background="#FFFFFF">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="8"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="48"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Background="#F8F9FC" BorderThickness="2 0 0 0" BorderBrush="#108EE9">
+            <Label Content="{Binding ClassName}" FontFamily="Source Han Sans CN" FontSize="18" FontWeight="Regular" Margin="24 0 0 0" VerticalContentAlignment="Bottom"/>
+        </Border>
+        <Border Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" Background="#F8F9FC" BorderThickness="2 0 0 0" BorderBrush="#108EE9">
+            <Label Content="{Binding Name}" FontFamily="Source Han Sans CN" FontSize="18" FontWeight="Regular" Margin="24 0 0 0" VerticalContentAlignment="Top"/>
+        </Border>
+    </Grid>
+</UserControl>

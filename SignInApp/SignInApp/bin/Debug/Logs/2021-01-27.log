@@ -1,0 +1,20 @@
+2021-01-27 09:27:07,561 WARN  Get version failed:未能找到路径“D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\Debug\upgrade\config.xml”的一部分。 
+2021-01-27 09:27:53,814 INFO  admin 
+2021-01-27 09:46:58,505 WARN  Get version failed:未能找到路径“D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\Debug\upgrade\config.xml”的一部分。 
+2021-01-27 09:47:00,476 INFO  admin 
+2021-01-27 09:47:08,432 WARN  无效的 URI: 未能确定 URI 的格式。 
+2021-01-27 09:47:09,255 INFO  admin 
+2021-01-27 09:47:15,297 WARN  无效的 URI: 未能确定 URI 的格式。 
+2021-01-27 09:47:17,711 INFO  admin 
+2021-01-27 09:47:21,694 WARN  无效的 URI: 未能确定 URI 的格式。 
+2021-01-27 09:47:54,555 WARN  Get version failed:未能找到路径“D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\Debug\upgrade\config.xml”的一部分。 
+2021-01-27 09:47:55,750 INFO  admin 
+2021-01-27 09:47:58,513 WARN  无效的 URI: 未能确定 URI 的格式。 
+2021-01-27 09:48:01,857 INFO  admin 
+2021-01-27 09:48:03,983 WARN  无效的 URI: 未能确定 URI 的格式。 
+2021-01-27 09:48:52,520 WARN  Get version failed:未能找到路径“D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\Debug\upgrade\config.xml”的一部分。 
+2021-01-27 09:48:55,147 INFO  admin 
+2021-01-27 09:48:57,689 WARN  无效的 URI: 未能确定 URI 的格式。 
+2021-01-27 15:47:07,501 WARN  Bitmap.FromFile failed:.\Images\org.png 
+2021-01-27 15:47:07,564 WARN  Bitmap.FromFile failed:.\Images\date.png 
+2021-01-27 15:47:07,587 WARN  Bitmap.FromFile failed:.\Images\date.png 

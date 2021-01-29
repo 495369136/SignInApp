@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SignInApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="rest_host" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://127.0.0.1:2000/open/</Value>
+    </Setting>
+    <Setting Name="province" Type="System.String" Scope="User">
+      <Value Profile="(Default)">浙江省</Value>
+    </Setting>
+    <Setting Name="app_type" Type="System.String" Scope="User">
+      <Value Profile="(Default)">安全生产培训</Value>
+    </Setting>
+    <Setting Name="app_name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">签到系统</Value>
+    </Setting>
+    <Setting Name="app_version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0</Value>
+    </Setting>
+    <Setting Name="support_company" Type="System.String" Scope="User">
+      <Value Profile="(Default)">杭州常青藤智慧科技有限公司</Value>
+    </Setting>
+    <Setting Name="support_tel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0571-8880-9200</Value>
+    </Setting>
+    <Setting Name="Test" Type="System.String" Scope="User">
+      <Value Profile="(Default)">false</Value>
+    </Setting>
+    <Setting Name="competent_organization" Type="System.String" Scope="User">
+      <Value Profile="(Default)">浙江省应急管理厅</Value>
+    </Setting>
+    <Setting Name="AppID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">25659291566342146</Value>
+    </Setting>
+    <Setting Name="AppSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1dce22b43da5f39d076c446a4217c579af5f7591</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SignInApp"
+                    xmlns:controls="clr-namespace:SignInApp.Controls">
+
+    <Style x:Key="myCheckBox" TargetType="{x:Type CheckBox}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <!-- Template = 模板 -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- ControlTemplate = 外观模板 -->
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <BulletDecorator VerticalAlignment="Center">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="bd" BorderThickness="1" MinHeight="28" MinWidth="28" CornerRadius="8" VerticalAlignment="Center" Background="#F5F5F5" BorderBrush="#E3E3E3">
+                                <Path x:Name="cp" Width="28" Height="28" Stroke="White" StrokeThickness="2"/>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="10,3,0,0"/>
+                    </BulletDecorator>
+
+                    <!--  控件触发器  -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <!-- 画上一个勾 -->
+                            <Setter TargetName="cp" Property="Data" Value="M 5,14 L 11,20,22,7"/>
+                            <Setter TargetName="bd" Property="Background" Value="#1890FF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

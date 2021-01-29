@@ -1,0 +1,11 @@
+D:\ProjectGit\SignInApp\RESTClient\bin\x86\Release\log4net.config
+D:\ProjectGit\SignInApp\RESTClient\bin\x86\Release\RESTClient.dll
+D:\ProjectGit\SignInApp\RESTClient\bin\x86\Release\RESTClient.pdb
+D:\ProjectGit\SignInApp\RESTClient\bin\x86\Release\Log.dll
+D:\ProjectGit\SignInApp\RESTClient\bin\x86\Release\Newtonsoft.Json.dll
+D:\ProjectGit\SignInApp\RESTClient\bin\x86\Release\Log.pdb
+D:\ProjectGit\SignInApp\RESTClient\obj\x86\Release\RESTClient.csprojAssemblyReference.cache
+D:\ProjectGit\SignInApp\RESTClient\obj\x86\Release\RESTClient.csproj.CoreCompileInputs.cache
+D:\ProjectGit\SignInApp\RESTClient\obj\x86\Release\RESTClient.csproj.CopyComplete
+D:\ProjectGit\SignInApp\RESTClient\obj\x86\Release\RESTClient.dll
+D:\ProjectGit\SignInApp\RESTClient\obj\x86\Release\RESTClient.pdb
