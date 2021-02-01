@@ -9,13 +9,13 @@
              d:DesignHeight="60" d:DesignWidth="1536">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding Size100}"/>
             <ColumnDefinition Width="{Binding Size200}"/>
-            <ColumnDefinition Width="{Binding Size240}"/>
-            <ColumnDefinition Width="{Binding Size100}"/>
-            <ColumnDefinition Width="{Binding Size240}"/>
-            <ColumnDefinition Width="{Binding Size100}"/>
+            <ColumnDefinition Width="{Binding Size50}"/>
+            <ColumnDefinition Width="{Binding Size200}"/>
+            <ColumnDefinition Width="{Binding Size60}"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="{Binding Size120}"/>
+            <ColumnDefinition Width="{Binding Size100}"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.ColumnSpan="1" Margin="24 0 0 0" Content="{Binding StudentName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
         <Label Grid.Column="1" Grid.ColumnSpan="1" Content="{Binding IdCardNum}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>

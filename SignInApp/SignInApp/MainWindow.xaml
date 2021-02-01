@@ -99,13 +99,13 @@
                 <Border Grid.Row="8" Grid.RowSpan="1" Background="#FFFFFF" Grid.Column="0" Grid.ColumnSpan="2">
                     <Grid Margin="24 0 0 0">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding Size100}"/>
                             <ColumnDefinition Width="{Binding Size200}"/>
-                            <ColumnDefinition Width="{Binding Size240}"/>
-                            <ColumnDefinition Width="{Binding Size100}"/>
-                            <ColumnDefinition Width="{Binding Size240}"/>
-                            <ColumnDefinition Width="{Binding Size100}"/>
+                            <ColumnDefinition Width="{Binding Size50}"/>
+                            <ColumnDefinition Width="{Binding Size200}"/>
+                            <ColumnDefinition Width="{Binding Size60}"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="{Binding Size120}"/>
+                            <ColumnDefinition Width="{Binding Size100}"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Grid.ColumnSpan="1" Margin="24 0 0 0" Content="姓名" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
                         <Label Grid.Column="1" Grid.ColumnSpan="1" Content="身份证号" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>

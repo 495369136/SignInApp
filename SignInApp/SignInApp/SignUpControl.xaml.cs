@@ -20,10 +20,10 @@ namespace SignInApp
             InitializeComponent();
             mSignUpInfo = signUpInfo;
             mSignUpInfo.Size18 = CommDef.Size18;
+            mSignUpInfo.Size50 = CommDef.Size50;
+            mSignUpInfo.Size60 = CommDef.Size60;
             mSignUpInfo.Size100 = CommDef.Size100;
-            mSignUpInfo.Size120 = CommDef.Size120;
             mSignUpInfo.Size200 = CommDef.Size200;
-            mSignUpInfo.Size240 = CommDef.Size240;
             int width = (int)SystemParameters.WorkArea.Width;
             this.Width = width - CommDef.Size380 - 24 - CommDef.Size24;
             this.DataContext = signUpInfo;
@@ -39,10 +39,10 @@ namespace SignInApp
     public class SignUpInfo
     {
         public double Size18 { get; set; }
+        public double Size50 { get; set; }
+        public double Size60 { get; set; }
         public double Size100 { get; set; }
-        public double Size120 { get; set; }
         public double Size200 { get; set; }
-        public double Size240 { get; set; }
 
         public String Id { get; set; }                    //课程ID
         public String StudentName { get; set; }         //姓名
