@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Data;
@@ -29,6 +30,8 @@ namespace SignInApp
         private string mClassCourse = null;
         private Dictionary<long, LessonInfo> mSelectLessons = new Dictionary<long, LessonInfo>();
 
+        private MainWindowFixInfo mainWindowFixInfo = new MainWindowFixInfo();
+
         public MainWindow(Org org)
         {
             InitializeComponent();
@@ -37,6 +40,66 @@ namespace SignInApp
             int width = (int)SystemParameters.WorkArea.Width;
             this.Width = width;
             this.Height = height;
+
+            CommDef.ScreenMultiple = 1080 / (double)height;
+            CommDef.Size8 /= CommDef.ScreenMultiple;
+            CommDef.Size14 /= CommDef.ScreenMultiple;
+            CommDef.Size16 /= CommDef.ScreenMultiple;
+            CommDef.Size18 /= CommDef.ScreenMultiple;
+            CommDef.Size20 /= CommDef.ScreenMultiple;
+            CommDef.Size22 /= CommDef.ScreenMultiple;
+            CommDef.Size24 /= CommDef.ScreenMultiple;
+            CommDef.Size26 /= CommDef.ScreenMultiple;
+            CommDef.Size27 /= CommDef.ScreenMultiple;
+            CommDef.Size30 /= CommDef.ScreenMultiple;
+            CommDef.Size35 /= CommDef.ScreenMultiple;
+            CommDef.Size40 /= CommDef.ScreenMultiple;
+            CommDef.Size48 /= CommDef.ScreenMultiple;
+            CommDef.Size50 /= CommDef.ScreenMultiple;
+            CommDef.Size52 /= CommDef.ScreenMultiple;
+            CommDef.Size55 /= CommDef.ScreenMultiple;
+            CommDef.Size60 /= CommDef.ScreenMultiple;
+            CommDef.Size80 /= CommDef.ScreenMultiple;
+            CommDef.Size86 /= CommDef.ScreenMultiple;
+            CommDef.Size88 /= CommDef.ScreenMultiple;
+            CommDef.Size90 /= CommDef.ScreenMultiple;
+            CommDef.Size100 /= CommDef.ScreenMultiple;
+            CommDef.Size120 /= CommDef.ScreenMultiple;
+            CommDef.Size140 /= CommDef.ScreenMultiple;
+            CommDef.Size180 /= CommDef.ScreenMultiple;
+            CommDef.Size200 /= CommDef.ScreenMultiple;
+            CommDef.Size213 /= CommDef.ScreenMultiple;
+            CommDef.Size240 /= CommDef.ScreenMultiple;
+            CommDef.Size277 /= CommDef.ScreenMultiple;
+            CommDef.Size380 /= CommDef.ScreenMultiple;
+
+            mainWindowFixInfo.ClassFixSize = 0;
+            mainWindowFixInfo.Size14 = CommDef.Size14;
+            mainWindowFixInfo.Size18 = CommDef.Size18;
+            mainWindowFixInfo.Size30 = CommDef.Size30;
+            mainWindowFixInfo.Size20 = CommDef.Size20;
+            mainWindowFixInfo.Size22 = CommDef.Size22;
+            mainWindowFixInfo.Size24 = CommDef.Size24;
+            mainWindowFixInfo.Size26 = CommDef.Size26;
+            mainWindowFixInfo.Size27 = CommDef.Size27;
+            mainWindowFixInfo.Size40 = CommDef.Size40;
+            mainWindowFixInfo.Size50 = CommDef.Size50;
+            mainWindowFixInfo.Size60 = CommDef.Size60;
+            mainWindowFixInfo.Size80 = CommDef.Size80;
+            mainWindowFixInfo.Size86 = CommDef.Size86;
+            mainWindowFixInfo.Size88 = CommDef.Size88;
+            mainWindowFixInfo.Size100 = CommDef.Size100;
+            mainWindowFixInfo.Size120 = CommDef.Size120;
+            mainWindowFixInfo.Size180 = CommDef.Size180;
+            mainWindowFixInfo.Size200 = CommDef.Size200;
+            mainWindowFixInfo.Size213 = CommDef.Size213;
+            mainWindowFixInfo.Size240 = CommDef.Size240;
+            mainWindowFixInfo.Size380 = CommDef.Size380;
+            this.DataContext = mainWindowFixInfo;
+
+            String CurrPath = Directory.GetCurrentDirectory().Trim();
+            if (CurrPath.EndsWith("upgrade"))
+                System.IO.Directory.SetCurrentDirectory(@"../");
 
             InfoDetail orginfo = new InfoDetail();
             Bitmap orgBmp = null;
@@ -131,6 +194,7 @@ namespace SignInApp
         private void ClearClassClickHandler(object sender, RoutedEventArgs e)
         {
             mSelectLessons.Clear();
+            mainWindowFixInfo.ClassFixSize = 0;
             lessons.Children.Clear();
             signUpList.Children.Clear();
             mClassCourse = null;
@@ -239,6 +303,11 @@ namespace SignInApp
                 }
             }
 
+            if (mSelectLessons.Count >= 2)
+                mainWindowFixInfo.ClassFixSize = mainWindowFixInfo.Size86 * 2;
+            else if (mSelectLessons.Count >= 1)
+                mainWindowFixInfo.ClassFixSize = mainWindowFixInfo.Size86 * 1;
+
             Dictionary<long, String> classCourse = new Dictionary<long, String>();
             foreach (var item in mSelectLessons)
             {
@@ -305,9 +374,15 @@ namespace SignInApp
 
                 if (mClassCourse == null)
                 {
-                    player.SoundLocation = @".\Voice\selectCourse.wav";
-                    player.LoadAsync();
-                    player.Play();
+                    try
+                    {
+                        player.SoundLocation = @".\Voice\selectCourse.wav";
+                        player.LoadAsync();
+                        player.Play();
+                    } catch (Exception err)
+                    {
+                        LogHelper.WriteWarnLog(err.Message);
+                    }
                     continue;
                 }
 
@@ -331,12 +406,16 @@ namespace SignInApp
                         //tipDialog.ShowDialog();
                     });
                     LogHelper.WriteWarnLog(outMessage);
-                    if (mClassStauts == 1)
-                        player.SoundLocation = @".\Voice\signUpInFail.wav";
-                    else
-                        player.SoundLocation = @".\Voice\signUpOutFail.wav";
-                    player.LoadAsync();
-                    player.Play();
+                    try {
+                        if (mClassStauts == 1)
+                            player.SoundLocation = @".\Voice\signUpInFail.wav";
+                        else
+                            player.SoundLocation = @".\Voice\signUpOutFail.wav";
+                        player.LoadAsync();
+                        player.Play();
+                    } catch (Exception err) {
+                        LogHelper.WriteWarnLog(err.Message);
+                    }
                     LogHelper.WriteWarnLog(outMessage);
                     continue;
                 }
@@ -356,12 +435,16 @@ namespace SignInApp
                         });
 
                         LogHelper.WriteWarnLog(message);
-                        if (mClassStauts == 1)
-                            player.SoundLocation = @".\Voice\signUpInFail.wav";
-                        else
-                            player.SoundLocation = @".\Voice\signUpOutFail.wav";
-                        player.LoadAsync();
-                        player.Play();
+                        try {
+                            if (mClassStauts == 1)
+                                player.SoundLocation = @".\Voice\signUpInFail.wav";
+                            else
+                                player.SoundLocation = @".\Voice\signUpOutFail.wav";
+                            player.LoadAsync();
+                            player.Play();
+                        } catch (Exception err) {
+                            LogHelper.WriteWarnLog(err.Message);
+                        }
                         LogHelper.WriteWarnLog("签到失败:" + message);
                         continue;
                     }
@@ -371,12 +454,16 @@ namespace SignInApp
                         broder_back.Visibility = Visibility.Collapsed;
                         _loading.Visibility = Visibility.Collapsed;
                     });
-                    if (mClassStauts == 1)
-                        player.SoundLocation = @".\Voice\signUpInSucc.wav";
-                    else
-                        player.SoundLocation = @".\Voice\signUpOutSucc.wav";
-                    player.LoadAsync();
-                    player.Play();
+                    try {
+                        if (mClassStauts == 1)
+                            player.SoundLocation = @".\Voice\signUpInSucc.wav";
+                        else
+                            player.SoundLocation = @".\Voice\signUpOutSucc.wav";
+                        player.LoadAsync();
+                        player.Play();
+                    } catch (Exception err) {
+                        LogHelper.WriteWarnLog(err.Message);
+                    }
                     QuerySignUp();
                     continue;
                 }
@@ -389,12 +476,16 @@ namespace SignInApp
                         //tipDialog.ShowDialog();
                     });
                     LogHelper.WriteWarnLog(err.Message);
-                    if (mClassStauts == 1)
-                        player.SoundLocation = @".\Voice\signUpInFail.wav";
-                    else
-                        player.SoundLocation = @".\Voice\signUpOutFail.wav";
-                    player.LoadAsync();
-                    player.Play();
+                    try {
+                        if (mClassStauts == 1)
+                            player.SoundLocation = @".\Voice\signUpInFail.wav";
+                        else
+                            player.SoundLocation = @".\Voice\signUpOutFail.wav";
+                        player.LoadAsync();
+                        player.Play();
+                    } catch (Exception errSub) {
+                        LogHelper.WriteWarnLog(errSub.Message);
+                    }
                     continue;
                 }
             }
@@ -580,6 +671,44 @@ namespace SignInApp
         }
     }
 
+    public class MainWindowFixInfo : NotificationBase
+    {
+        double mClassFixSize;
+        public double Size14 { get; set; }
+        public double Size18 { get; set; }
+        public double Size20 { get; set; }
+        public double Size22 { get; set; }
+        public double Size24 { get; set; }
+        public double Size26 { get; set; }
+        public double Size27 { get; set; }
+        public double Size30 { get; set; }
+        public double Size40 { get; set; }
+        public double Size50 { get; set; }
+        public double Size60 { get; set; }
+        public double Size80 { get; set; }
+        public double Size86 { get; set; }
+        public double Size88 { get; set; }
+        public double Size100 { get; set; }
+        public double Size120 { get; set; }
+        public double Size180 { get; set; }
+        public double Size200 { get; set; }
+        public double Size213 { get; set; }
+        public double Size240 { get; set; }
+        public double Size380 { get; set; }
+        public double ClassFixSize                       //减分项
+        {
+            get
+            {
+                return mClassFixSize;
+            }
+            set
+            {
+                mClassFixSize = value;
+                RaisePropertyChanged("ClassFixSize");
+            }
+        }
+    }
+
     public class Org
     {
         public long id { get; set; }           //培训机构ID
@@ -598,5 +727,44 @@ namespace SignInApp
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+
+    //通用
+    public static class CommDef
+    {
+        public static double ScreenMultiple = 0;
+        public static double Size8 = 8;
+        public static double Size14 = 14;
+        public static double Size16 = 16;
+        public static double Size18 = 18;
+        public static double Size20 = 20;
+        public static double Size22 = 22;
+        public static double Size24 = 24;
+        public static double Size26 = 26;
+        public static double Size27 = 27;
+        public static double Size30 = 30;
+        public static double Size35 = 35;
+        public static double Size40 = 40;
+        public static double Size48 = 48;
+        public static double Size50 = 50;
+        public static double Size55 = 55;
+        public static double Size52 = 52;
+        public static double Size60 = 60;
+        public static double Size80 = 80;
+        public static double Size90 = 90;
+        public static double Size86 = 86;
+        public static double Size88 = 88;
+        public static double Size100 = 100;
+        public static double Size120 = 120;
+        public static double Size140 = 140;
+        public static double Size180 = 180;
+        public static double Size200 = 200;
+        public static double Size213 = 213;
+        public static double Size240 = 240; 
+        public static double Size277 = 277;
+        public static double Size380 = 380;
+
+        public static string ApplicationDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HZCQT_SignIn\\";
+        public static string UserPath = ApplicationDataPath;
     }
 }

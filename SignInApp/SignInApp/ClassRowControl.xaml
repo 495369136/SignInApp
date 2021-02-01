@@ -8,21 +8,21 @@
              d:DesignHeight="60" d:DesignWidth="805">
     <Grid MouseEnter="MouseUpHandler" MouseLeave="MouseLeaveHandler" MouseLeftButtonDown="MouseLeftButtonDownHandler">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="{Binding Size180}"/>
+            <ColumnDefinition Width="{Binding Size120}"/>
+            <ColumnDefinition Width="{Binding Size120}"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="{Binding Size50}"/>
+            <ColumnDefinition Width="{Binding Size30}"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="{Binding Size60}"/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" Grid.ColumnSpan="1" Margin="20 0 0 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding ClassName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Label Grid.Column="1" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding StartTime}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Label Grid.Column="2" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding EndTime}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Label Grid.Column="3" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding ExamTypeName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Label Grid.Column="4" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding StudentNums}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Image x:Name="ImageRight" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Source="/Images/right.png" Width="18" Visibility="Hidden"/>
+        <Label Grid.Column="0" Grid.ColumnSpan="1" Margin="20 0 0 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding ClassName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Label Grid.Column="1" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding StartTime}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Label Grid.Column="2" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding EndTime}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Label Grid.Column="3" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding ExamTypeName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Label Grid.Column="4" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding StudentNums}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Image x:Name="ImageRight" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Source="/Images/right.png" Width="{Binding Size18}" Visibility="Hidden"/>
     </Grid>
 </UserControl>

@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Xml;
+using System.Diagnostics;
 
 namespace SignInApp
 {
@@ -19,8 +20,7 @@ namespace SignInApp
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public static string ApplicationDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HZCQT_signIn\\";
-        public string CONF_FILE_NAME = ApplicationDataPath + "appSettings.conf";
+        public string CONF_FILE_NAME = CommDef.ApplicationDataPath + "appSettings.conf";
         public const string CONF_USER_NAME = "userName";
         public const string CONF_PASSWORD = "password";
         public const string CONF_REMAIN_FLAG = "isRemember";
@@ -65,36 +65,64 @@ namespace SignInApp
             support_tel.Content = Properties.Settings.Default.support_tel;
             RESTClient.REST_HOST = Properties.Settings.Default.rest_host;
 
-            if (!Directory.Exists(ApplicationDataPath))
-                Directory.CreateDirectory(ApplicationDataPath);
+            if (!Directory.Exists(CommDef.ApplicationDataPath))
+                Directory.CreateDirectory(CommDef.ApplicationDataPath);
 
-            if (File.Exists(CONF_FILE_NAME) == false)
+            string computerInfo = ComputerInfo.GetComputerInfo();
+            string encryptComputer = new EncryptionHelper().EncryptString(computerInfo);
+
+            EncryptionHelper help = new EncryptionHelper(EncryptionKeyEnum.KeyB);
+            string md5String = help.GetMD5String(encryptComputer);
+            string registInfo = help.EncryptString(md5String);
+
+            //判断是否已经运行
+            Process selfProcess = Process.GetCurrentProcess();
+            Process[] allProcess = Process.GetProcessesByName("SignInApp");
+            foreach (Process item in allProcess)
             {
-                FileStream fs = new FileStream(CONF_FILE_NAME, FileMode.CreateNew);
-                if (fs != null)
-                    fs.Close();
-                return;
-            }
-
-            string userName = "";
-            string password = "";
-            string isRemember = "";
-            bool ret = GetConfInfo(ref userName, ref password, ref isRemember);
-            if (ret)
-            {
-                if (userName != "")
+                if (item.Id != selfProcess.Id)
                 {
-                    account.Text = userName;
-                    this.account.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x00, 0x00, 0x00));
-                }
-
-                if (isRemember == "true")
-                {
-                    this.password.Password = password;
-                    this.remainFlag.IsChecked = true;
+                    item.Kill();
                 }
             }
-            return;
+
+            if (RegistFileHelper.ExistRegistInfofile() == true)
+            {
+                string inputRegist = RegistFileHelper.ReadRegistFile();
+                if (registInfo == inputRegist)
+                {
+                    if (File.Exists(CONF_FILE_NAME) == false)
+                    {
+                        FileStream fs = new FileStream(CONF_FILE_NAME, FileMode.CreateNew);
+                        if (fs != null)
+                            fs.Close();
+                        return;
+                    }
+
+                    string userName = "";
+                    string password = "";
+                    string isRemember = "";
+                    bool ret = GetConfInfo(ref userName, ref password, ref isRemember);
+                    if (ret)
+                    {
+                        if (userName != "")
+                        {
+                            account.Text = userName;
+                            this.account.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x00, 0x00, 0x00));
+                        }
+
+                        if (isRemember == "true")
+                        {
+                            this.password.Password = password;
+                            this.remainFlag.IsChecked = true;
+                        }
+                    }
+                    return;
+                }
+            }
+            RegistWindow RegistWindowPage = new RegistWindow();
+            RegistWindowPage.Show();
+            this.Close();
         }
 
         private bool GetConfInfo(ref string userName, ref string password, ref string isRemember)

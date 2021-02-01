@@ -8,17 +8,17 @@
              d:DesignHeight="100" d:DesignWidth="330" Background="#F9F9F9">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="55"/>
-            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="{Binding Size55}"/>
+            <ColumnDefinition Width="{Binding Size277}"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="{Binding Size50}"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="16"/>
+            <RowDefinition Height="{Binding Size16}"/>
         </Grid.RowDefinitions>
-        <Image Source="{Binding InfoImage}" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" Margin="20 12 0 0" Width="27" Height="27"/>
-        <Label Content="{Binding InfoTitle}" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Source Han Sans CN" FontWeight="Regular" FontSize="18" Foreground="#999999"/>
-        <Label Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Left" FontFamily="Source Han Sans CN" FontWeight="Regular" FontSize="20" Foreground="#333333" Margin="0 0 10 0">
+        <Image Source="{Binding InfoImage}" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" Margin="20 12 0 0" Width="{Binding Size27}" Height="{Binding Size27}"/>
+        <Label Content="{Binding InfoTitle}" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Source Han Sans CN" FontWeight="Regular" FontSize="{Binding Size18}" Foreground="#999999"/>
+        <Label Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Left" FontFamily="Source Han Sans CN" FontWeight="Regular" FontSize="{Binding Size20}" Foreground="#333333" Margin="0 0 10 0">
             <TextBlock TextWrapping="Wrap" Text="{Binding InfoText}"/>
         </Label>
         <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="1" Background="#F5F5F5"/>

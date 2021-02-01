@@ -8,17 +8,17 @@
              d:DesignHeight="60" d:DesignWidth="640">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="{Binding Size60}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="{Binding Size90}"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="{Binding Size120}"/>
+            <ColumnDefinition Width="{Binding Size100}"/>
         </Grid.ColumnDefinitions>
-        <CheckBox Grid.Column="0" Grid.ColumnSpan="1" x:Name="checkbox" Style="{StaticResource myCheckBox}" IsChecked="{Binding IsChecked}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#1890FF" Background="Transparent" Click="CheckBoxClickHandler"/>
-        <Label Grid.Column="1" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding Name}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Label Grid.Column="2" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding Teacher}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-        <Label Grid.Column="3" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding Number}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
+        <CheckBox Grid.Column="0" Grid.ColumnSpan="1" x:Name="checkbox" Style="{StaticResource myCheckBox}" IsChecked="{Binding IsChecked}" Height="{Binding Size35}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#1890FF" Background="Transparent" Click="CheckBoxClickHandler"/>
+        <Label Grid.Column="1" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding Name}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Label Grid.Column="2" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding Teacher}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+        <Label Grid.Column="3" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="{Binding Number}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
     </Grid>
 </UserControl>

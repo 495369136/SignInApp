@@ -57,3 +57,5 @@ D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Debug\Voice\signUpInFail.wav
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Debug\Voice\signUpInSucc.wav
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Debug\Voice\signUpOutFail.wav
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Debug\Voice\signUpOutSucc.wav
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Debug\RegistWindow.g.cs
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Debug\RegistWindow.baml

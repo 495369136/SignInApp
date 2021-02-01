@@ -21,10 +21,35 @@ namespace SignInApp
         private long mSelectClassId = 0;
         private Dictionary<long, LessonInfo> mLessonList = new Dictionary<long, LessonInfo>();
         private Dictionary<long, LessonInfo> mSelectLessons = null;
+        private ClassWindowFixInfo mClassWindowFixInfo = new ClassWindowFixInfo();
 
         public ClassWindow(JArray classList, Dictionary<long, LessonInfo> selectLessons)
         {
             InitializeComponent();
+
+            int height = (int)SystemParameters.WorkArea.Height;
+            int width = (int)SystemParameters.WorkArea.Width;
+            this.Width = width - CommDef.Size380;
+            this.Height = height - CommDef.Size88;
+            this.Top = CommDef.Size88;
+            this.Left = CommDef.Size380;
+
+            mClassWindowFixInfo.Size16 = CommDef.Size16;
+            mClassWindowFixInfo.Size18 = CommDef.Size18;
+            mClassWindowFixInfo.Size20 = CommDef.Size20;
+            mClassWindowFixInfo.Size24 = CommDef.Size24;
+            mClassWindowFixInfo.Size40 = CommDef.Size40;
+            mClassWindowFixInfo.Size60 = CommDef.Size60;
+            mClassWindowFixInfo.Size52 = CommDef.Size52;
+            mClassWindowFixInfo.Size80 = CommDef.Size80;
+            mClassWindowFixInfo.Size88 = CommDef.Size88;
+            mClassWindowFixInfo.Size90 = CommDef.Size90;
+            mClassWindowFixInfo.Size100 = CommDef.Size100;
+            mClassWindowFixInfo.Size120 = CommDef.Size120;
+            mClassWindowFixInfo.Size180 = CommDef.Size180;
+            mClassWindowFixInfo.Size213 = CommDef.Size213;
+            mClassWindowFixInfo.Size380 = CommDef.Size380;
+            this.DataContext = mClassWindowFixInfo;
 
             mSelectLessons = selectLessons;
             int index = 0;
@@ -32,7 +57,8 @@ namespace SignInApp
             {
                 JToken jToken = item;
                 ClassInfo classInfo = new ClassInfo();
-                try {
+                try
+                {
                     classInfo.Id = (long)jToken.SelectToken("id");
                     classInfo.ClassName = (String)jToken.SelectToken("className");
                     classInfo.StartTime = (String)jToken.SelectToken("startTime");
@@ -42,7 +68,9 @@ namespace SignInApp
                     ClassRowControl classRowControl = new ClassRowControl(index++, classInfo);
                     classRowControl.SelectClass += SelectClass;
                     ClassList.Children.Add(classRowControl);
-                } catch (Exception err) {
+                }
+                catch (Exception err)
+                {
                     LogHelper.WriteWarnLog(err.Message);
                     continue;
                 }
@@ -77,7 +105,7 @@ namespace SignInApp
                 queryLesson.Start();
             }
         }
-        
+
         private void QueryLessonHandler(ClassInfo classInfo)
         {
             string outMessage = "";
@@ -86,7 +114,8 @@ namespace SignInApp
             {
                 if (outMessage == "")
                     outMessage = "获取课程信息失败，服务器错误";
-                this.Dispatcher.Invoke(() => {
+                this.Dispatcher.Invoke(() =>
+                {
                     lesson_broder_back.Visibility = Visibility.Collapsed;
                     _lesson_loading.Visibility = Visibility.Collapsed;
                     WarningTipWindow tipDialog = new WarningTipWindow(outMessage);
@@ -103,7 +132,8 @@ namespace SignInApp
                 if (status != "success")
                 {
                     string message = (String)jResp.SelectToken("message", true);
-                    this.Dispatcher.Invoke(() => {
+                    this.Dispatcher.Invoke(() =>
+                    {
                         lesson_broder_back.Visibility = Visibility.Collapsed;
                         _lesson_loading.Visibility = Visibility.Collapsed;
                         WarningTipWindow tipDialog = new WarningTipWindow("获取课程信息失败:" + message);
@@ -116,7 +146,8 @@ namespace SignInApp
                 JArray jArray = (JArray)jResp.SelectToken("data", true);
                 if (jArray == null || jArray.Count == 0)
                 {
-                    this.Dispatcher.Invoke(() => {
+                    this.Dispatcher.Invoke(() =>
+                    {
                         lesson_broder_back.Visibility = Visibility.Collapsed;
                         _lesson_loading.Visibility = Visibility.Collapsed;
                     });
@@ -125,7 +156,8 @@ namespace SignInApp
                 }
 
                 LogHelper.WriteInfoLog("获取课程信息成功");
-                this.Dispatcher.Invoke(() => {
+                this.Dispatcher.Invoke(() =>
+                {
                     lesson_broder_back.Visibility = Visibility.Collapsed;
                     _lesson_loading.Visibility = Visibility.Collapsed;
 
@@ -143,9 +175,12 @@ namespace SignInApp
                             lessonInfo.ClassId = classInfo.Id;
                             lessonInfo.ClassName = "班级：" + classInfo.ClassName;
                             if (mLessonList.ContainsKey(lessonInfo.Id)
-                               || mSelectLessons.ContainsKey(lessonInfo.Id)) {
+                               || mSelectLessons.ContainsKey(lessonInfo.Id))
+                            {
                                 lessonInfo.IsChecked = true;
-                            } else {
+                            }
+                            else
+                            {
                                 lessonInfo.IsChecked = false;
                             }
 
@@ -164,7 +199,8 @@ namespace SignInApp
             }
             catch (Exception err)
             {
-                this.Dispatcher.Invoke(() => {
+                this.Dispatcher.Invoke(() =>
+                {
                     lesson_broder_back.Visibility = Visibility.Collapsed;
                     _lesson_loading.Visibility = Visibility.Collapsed;
                     WarningTipWindow tipDialog = new WarningTipWindow("获取课程信息失败，" + err.Message);
@@ -176,9 +212,12 @@ namespace SignInApp
 
         private void SelectLesson(long lessonId, bool isSelected, LessonInfo lessonInfo)
         {
-            if (isSelected) {
+            if (isSelected)
+            {
                 mLessonList.Add(lessonId, lessonInfo);
-            } else {
+            }
+            else
+            {
                 mLessonList.Remove(lessonId);
             }
         }
@@ -234,7 +273,8 @@ namespace SignInApp
             {
                 if (outMessage == "")
                     outMessage = "获取班级信息失败，服务器错误";
-                this.Dispatcher.Invoke(() => {
+                this.Dispatcher.Invoke(() =>
+                {
                     broder_back.Visibility = Visibility.Collapsed;
                     _loading.Visibility = Visibility.Collapsed;
                     WarningTipWindow tipDialog = new WarningTipWindow(outMessage);
@@ -251,7 +291,8 @@ namespace SignInApp
                 if (status != "success")
                 {
                     string message = (String)jResp.SelectToken("message", true);
-                    this.Dispatcher.Invoke(() => {
+                    this.Dispatcher.Invoke(() =>
+                    {
                         broder_back.Visibility = Visibility.Collapsed;
                         _loading.Visibility = Visibility.Collapsed;
                         WarningTipWindow tipDialog = new WarningTipWindow("获取班级信息失败:" + message);
@@ -264,7 +305,8 @@ namespace SignInApp
                 JArray jArray = (JArray)jResp.SelectToken("data", true);
                 if (jArray == null || jArray.Count == 0)
                 {
-                    this.Dispatcher.Invoke(() => {
+                    this.Dispatcher.Invoke(() =>
+                    {
                         broder_back.Visibility = Visibility.Collapsed;
                         _loading.Visibility = Visibility.Collapsed;
                     });
@@ -273,7 +315,8 @@ namespace SignInApp
                 }
 
                 LogHelper.WriteInfoLog("获取班级信息成功");
-                this.Dispatcher.Invoke(() => {
+                this.Dispatcher.Invoke(() =>
+                {
                     broder_back.Visibility = Visibility.Collapsed;
                     _loading.Visibility = Visibility.Collapsed;
 
@@ -308,7 +351,8 @@ namespace SignInApp
             }
             catch (Exception err)
             {
-                this.Dispatcher.Invoke(() => {
+                this.Dispatcher.Invoke(() =>
+                {
                     broder_back.Visibility = Visibility.Collapsed;
                     _loading.Visibility = Visibility.Collapsed;
                     WarningTipWindow tipDialog = new WarningTipWindow("获取班级信息失败，" + err.Message);
@@ -317,5 +361,25 @@ namespace SignInApp
                 return;
             }
         }
+    }
+
+
+    public class ClassWindowFixInfo : NotificationBase
+    {
+        public double Size16 { get; set; }
+        public double Size18 { get; set; }
+        public double Size20 { get; set; }
+        public double Size24 { get; set; }
+        public double Size40 { get; set; }
+        public double Size60 { get; set; }
+        public double Size52 { get; set; }
+        public double Size80 { get; set; }
+        public double Size88 { get; set; }
+        public double Size90 { get; set; }
+        public double Size100 { get; set; }
+        public double Size120 { get; set; }
+        public double Size180 { get; set; }
+        public double Size213 { get; set; }
+        public double Size380 { get; set; }
     }
 }

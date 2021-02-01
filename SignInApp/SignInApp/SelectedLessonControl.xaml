@@ -8,21 +8,21 @@
              d:DesignHeight="86" d:DesignWidth="1535" Background="#FFFFFF">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="8"/>
+            <RowDefinition Height="{Binding Size8}"/>
+            <RowDefinition Height="{Binding Size35}"/>
+            <RowDefinition Height="{Binding Size35}"/>
+            <RowDefinition Height="{Binding Size8}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="48"/>
+            <ColumnDefinition Width="{Binding Size48}"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Background="#F8F9FC" BorderThickness="2 0 0 0" BorderBrush="#108EE9">
-            <Label Content="{Binding ClassName}" FontFamily="Source Han Sans CN" FontSize="18" FontWeight="Regular" Margin="24 0 0 0" VerticalContentAlignment="Bottom"/>
+            <Label Content="{Binding ClassName}" FontFamily="Source Han Sans CN" FontSize="{Binding Size18}" FontWeight="Regular" Margin="24 0 0 0" VerticalContentAlignment="Bottom"/>
         </Border>
         <Border Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" Background="#F8F9FC" BorderThickness="2 0 0 0" BorderBrush="#108EE9">
-            <Label Content="{Binding Name}" FontFamily="Source Han Sans CN" FontSize="18" FontWeight="Regular" Margin="24 0 0 0" VerticalContentAlignment="Top"/>
+            <Label Content="{Binding Name}" FontFamily="Source Han Sans CN" FontSize="{Binding Size18}" FontWeight="Regular" Margin="24 0 0 0" VerticalContentAlignment="Top"/>
         </Border>
     </Grid>
 </UserControl>

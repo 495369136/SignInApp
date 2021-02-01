@@ -9,20 +9,20 @@
              d:DesignHeight="60" d:DesignWidth="1536">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="240"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="240"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="{Binding Size200}"/>
+            <ColumnDefinition Width="{Binding Size240}"/>
+            <ColumnDefinition Width="{Binding Size100}"/>
+            <ColumnDefinition Width="{Binding Size240}"/>
+            <ColumnDefinition Width="{Binding Size100}"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="{Binding Size120}"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.ColumnSpan="1" Margin="24 0 0 0" Content="{Binding StudentName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <Label Grid.Column="1" Grid.ColumnSpan="1" Content="{Binding IdCardNum}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <Label Grid.Column="2" Grid.ColumnSpan="1" Content="{Binding Sex}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <Label Grid.Column="3" Grid.ColumnSpan="1" Content="{Binding CheckTime}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <Label Grid.Column="4" Grid.ColumnSpan="1" Content="{Binding Type}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <Label Grid.Column="5" Grid.ColumnSpan="1" Content="{Binding CourseName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <controls:TextButton Grid.Column="7" Grid.ColumnSpan="1" IsEnabled="True" Content="删除" FontFamily="Source Han Sans CN" Foreground="#333333" FontSize="18" Background="Transparent" Width="Auto" HorizontalAlignment="Left" BorderThickness="0" Click="DeleteClickHandler"/>
+        <Label Grid.Column="0" Grid.ColumnSpan="1" Margin="24 0 0 0" Content="{Binding StudentName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Grid.Column="1" Grid.ColumnSpan="1" Content="{Binding IdCardNum}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Grid.Column="2" Grid.ColumnSpan="1" Content="{Binding Sex}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Grid.Column="3" Grid.ColumnSpan="1" Content="{Binding CheckTime}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Grid.Column="4" Grid.ColumnSpan="1" Content="{Binding Type}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Grid.Column="5" Grid.ColumnSpan="1" Content="{Binding CourseName}" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <controls:TextButton Grid.Column="7" Grid.ColumnSpan="1" IsEnabled="True" Content="删除" FontFamily="Source Han Sans CN" Foreground="#333333" FontSize="{Binding Size18}" Background="Transparent" Width="Auto" HorizontalAlignment="Left" BorderThickness="0" Click="DeleteClickHandler"/>
     </Grid>
 </UserControl>

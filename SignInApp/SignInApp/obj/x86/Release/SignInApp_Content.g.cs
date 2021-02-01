@@ -9,7 +9,9 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/selectcourse.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/signupfail.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/signupsucc.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/signupinfail.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/signupinsucc.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/signupoutfail.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("voice/signupoutsucc.wav")]
 
 

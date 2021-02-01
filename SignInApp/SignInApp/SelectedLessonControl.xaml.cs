@@ -23,9 +23,17 @@ namespace SignInApp
         public SelectedLessonControl(LessonInfo lessonInfo)
         {
             InitializeComponent();
+            
+            int width = (int)SystemParameters.WorkArea.Width;
+            this.Width = width - CommDef.Size380;
 
+            lessonInfo.Size8 = CommDef.Size8;
+            lessonInfo.Size18 = CommDef.Size18;
+            lessonInfo.Size24 = CommDef.Size24;
+            lessonInfo.Size35 = CommDef.Size35;
+            lessonInfo.Size48 = CommDef.Size48;
             this.DataContext = lessonInfo;
-            this.Width = 1535;
+            //this.Width = 1535;
         }
     }
 }

@@ -7,59 +7,68 @@
         xmlns:controls="clr-namespace:SignInApp.Controls"
         mc:Ignorable="d"
         Title="ClassWindow" Height="952" Width="1535"
-        WindowStyle="None" WindowStartupLocation="Manual" Top="87" Left="384"
+        WindowStyle="None" WindowStartupLocation="Manual"
         ResizeMode="CanResizeWithGrip" AllowsTransparency="True" Background="#F5F5F5">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="772"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="{Binding Size80}"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="{Binding Size100}"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding Size40}"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="{Binding Size52}"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Background="#FFFFFF" BorderThickness="0 0 0 1" BorderBrush="#E6E6E6">
-            <Label Margin="40 5 0 0"  Content="培训班" Foreground="#333333" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="24" VerticalAlignment="Center"/>
+
+        <Border Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="4" Background="#FFFFFF" BorderThickness="0 0 0 1" BorderBrush="#E6E6E6"/>
+        <Border Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1">
+            <Label Margin="0 5 0 0"  Content="培训班" Foreground="#333333" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size24}" VerticalAlignment="Center"/>
         </Border>
-        <Border Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Background="#FFFFFF" BorderThickness="0 0 0 1" BorderBrush="#E6E6E6">
-            <controls:ImageButton Margin="0 0 20 0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20" IsEnabled="True" ImagePath="\Images\close.png" CornerRadius="5" Background="Transparent" Click="CloseClickHandler"/>
+        <Border Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1">
+            <controls:ImageButton Margin="0 0 0 0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="{Binding Size20}" IsEnabled="True" ImagePath="\Images\close.png" CornerRadius="5" Background="Transparent" Click="CloseClickHandler"/>
         </Border>
 
-        <Border Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#F5F5F5" >
+        <Border Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" Background="#F5F5F5" >
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="16"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="{Binding Size16}"/>
+                    <RowDefinition Height="{Binding Size60}"/>
+                    <RowDefinition Height="{Binding Size20}"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40"/>
-                    <ColumnDefinition Width="805"/>
-                    <ColumnDefinition Width="640"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="broder_back" Visibility="Collapsed" Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" DockPanel.Dock="Top" Panel.ZIndex="2">
+                <Border x:Name="broder_back" Visibility="Collapsed" Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="9" Background="Transparent" DockPanel.Dock="Top" Panel.ZIndex="2">
                     <local:LoadingWait x:Name="_loading" Visibility="Collapsed"/>
                 </Border>
 
-                <Border Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Background="#FFFFFF">
+                <Border Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="5" Background="#FFFFFF">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Size20}"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Size20}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Size20}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Size20}"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBox x:Name="classSrachCriteria" VerticalContentAlignment="Center" Grid.Column="1" FontFamily="思源黑体 CN Regular" FontSize="18" Foreground="#666666" BorderThickness="0" KeyDown="SerachKeyDownHandler">
+                        <TextBox x:Name="classSrachCriteria" VerticalContentAlignment="Center" Grid.Column="1" FontFamily="思源黑体 CN Regular" FontSize="{Binding Size18}" Foreground="#666666" BorderThickness="0" KeyDown="SerachKeyDownHandler">
                             <TextBox.Resources>
                                 <VisualBrush x:Key="HelpBrush" TileMode="None" Opacity="0.3" Stretch="None" AlignmentX="Left">
                                     <VisualBrush.Visual>
-                                        <TextBlock FontFamily="思源黑体 CN Regular" FontSize="18" Foreground="#C0C0C0" Text="输入班级名称"/>
+                                        <TextBlock FontFamily="思源黑体 CN Regular" FontSize="{Binding Size18}" Foreground="#C0C0C0" Text="输入班级名称"/>
                                     </VisualBrush.Visual>
                                 </VisualBrush>
                             </TextBox.Resources>
@@ -79,27 +88,27 @@
                         <controls:ImageButton Grid.Column="3" Height="{Binding Size20}" IsEnabled="True" ImagePath="\Images\search.png" CornerRadius="5" Background="Transparent" Click="SearchClickHandler"/>
                     </Grid>
                 </Border>
-                <Border Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" BorderThickness="0 1 4 0" BorderBrush="#E6E6E6" Background="#FFFFFF">
+                <Border Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="5" BorderThickness="0 1 4 0" BorderBrush="#E6E6E6" Background="#FFFFFF">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="6" Color="#E6E6E6" Direction="300" ShadowDepth="0.1"/>
                     </Border.Effect>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="{Binding Size60}"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="180"/>
-                            <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="{Binding Size180}"/>
+                            <ColumnDefinition Width="{Binding Size120}"/>
+                            <ColumnDefinition Width="{Binding Size120}"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="{Binding Size80}"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="20 0 0 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="班级名称" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="培训开始日期" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="培训结束日期" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="科目" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="人数" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="20 0 0 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="班级名称" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="培训开始日期" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="培训结束日期" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="科目" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="人数" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
                         <ScrollViewer Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,0,0,0" VerticalScrollBarVisibility="Auto">
                             <StackPanel x:Name="ClassList" Orientation="Vertical" VerticalAlignment="Top">
                             </StackPanel>
@@ -107,25 +116,25 @@
                     </Grid>
                 </Border>
 
-                <Border x:Name="lesson_broder_back" Visibility="Collapsed" Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Background="Transparent" DockPanel.Dock="Top" Panel.ZIndex="2">
+                <Border x:Name="lesson_broder_back" Visibility="Collapsed" Grid.Row="3" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="4" Background="Transparent" DockPanel.Dock="Top" Panel.ZIndex="2">
                     <local:LoadingWait x:Name="_lesson_loading" Visibility="Collapsed"/>
                 </Border>
-                <Border Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" BorderBrush="#E6E6E6" Background="#FFFFFF">
+                <Border Grid.Row="3" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="4" BorderBrush="#E6E6E6" Background="#FFFFFF">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="{Binding Size60}"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="{Binding Size90}"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="{Binding Size120}"/>
+                            <ColumnDefinition Width="{Binding Size100}"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="20 0 0 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="选择" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="课程" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="教师" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
-                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="学时" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="18" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="20 0 0 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="选择" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="课程" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="教师" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
+                        <Label Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="学时" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size18}" Foreground="#333333"/>
                         <ScrollViewer Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,0,0,0" VerticalScrollBarVisibility="Auto">
                             <StackPanel x:Name="LessonList" Orientation="Vertical" VerticalAlignment="Top">
                             </StackPanel>
@@ -135,10 +144,10 @@
             </Grid>
         </Border>
 
-        <Border Grid.Row="2" Grid.RowSpan="1" Background="#FFFFFF" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0 1 0 0" BorderBrush="#E6E6E6">
+        <Border Grid.Row="2" Grid.RowSpan="1" Background="#FFFFFF" Grid.Column="0" Grid.ColumnSpan="4" BorderThickness="0 1 0 0" BorderBrush="#E6E6E6">
             <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                <controls:TextButton Content="取消" BorderThickness="0" Margin="0 0 0 0" Height="60" Width="213" IsEnabled="True" Foreground="#999999" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="20" CornerRadiusText="5" Background="#F2F2F2" Click="CloseClickHandler"/>
-                <controls:TextButton Content="选定课程" BorderThickness="0" Margin="24 0 24 0" Height="60" Width="213" IsEnabled="True" Foreground="#FFFFFF" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="20" CornerRadiusText="5" Background="#43A047" Click="SelectLessonClickHandler"/>
+                <controls:TextButton Content="取消" BorderThickness="0" Margin="0 0 0 0" Height="{Binding Size60}" Width="{Binding Size213}" IsEnabled="True" Foreground="#999999" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size20}" CornerRadiusText="5" Background="#F2F2F2" Click="CloseClickHandler"/>
+                <controls:TextButton Content="选定课程" BorderThickness="0" Margin="24 0 24 0" Height="{Binding Size60}" Width="{Binding Size213}" IsEnabled="True" Foreground="#FFFFFF" FontFamily="Source Han Sans CN" FontWeight="Medium" FontSize="{Binding Size20}" CornerRadiusText="5" Background="#43A047" Click="SelectLessonClickHandler"/>
             </WrapPanel>
         </Border>
     </Grid>

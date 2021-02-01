@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTClient", "..\RESTClient
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log", "..\Log\Log.csproj", "{EB6D8FE8-EF9F-4298-8198-20F229C91542}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup\Setup.vdproj", "{5A9B3E33-F6D9-444E-9066-B12188B8E47C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{EB6D8FE8-EF9F-4298-8198-20F229C91542}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB6D8FE8-EF9F-4298-8198-20F229C91542}.Release|x86.ActiveCfg = Release|x86
 		{EB6D8FE8-EF9F-4298-8198-20F229C91542}.Release|x86.Build.0 = Release|x86
+		{5A9B3E33-F6D9-444E-9066-B12188B8E47C}.Debug|Any CPU.ActiveCfg = Debug
+		{5A9B3E33-F6D9-444E-9066-B12188B8E47C}.Debug|x86.ActiveCfg = Debug
+		{5A9B3E33-F6D9-444E-9066-B12188B8E47C}.Release|Any CPU.ActiveCfg = Release
+		{5A9B3E33-F6D9-444E-9066-B12188B8E47C}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

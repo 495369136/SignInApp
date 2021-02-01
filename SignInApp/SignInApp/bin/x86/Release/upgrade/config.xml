@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><catalog>
+    <AppRestUrl>https://exam.yjt.zj.gov.cn/</AppRestUrl>
+    <AppRestUrlMaintain>maintain</AppRestUrlMaintain>
+    <AppRestUrlDownload>deployfile</AppRestUrlDownload>
+    <AppID></AppID>
+    <AppName>SignIn</AppName>
+    <AppFile>SignInApp.exe</AppFile>
+    <CurrVersion>1.0</CurrVersion>
+</catalog>

@@ -1,7 +1,9 @@
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\log4net.config
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\selectCourse.wav
-D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\signUpFail.wav
-D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\signUpSucc.wav
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\signUpInFail.wav
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\signUpInSucc.wav
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\signUpOutFail.wav
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\Voice\signUpOutSucc.wav
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\SignInApp.exe.config
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\SignInApp.exe
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\bin\x86\Release\SignInApp.pdb
@@ -21,6 +23,7 @@ D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\LessonRowControl.g.c
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\LoadingWait.g.cs
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\LoginWindow.g.cs
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\MainWindow.g.cs
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\RegistWindow.g.cs
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\SelectedLessonControl.g.cs
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\SignUpControl.g.cs
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\WarningTipWindow.g.cs
@@ -37,6 +40,7 @@ D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\LessonRowControl.bam
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\LoadingWait.baml
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\LoginWindow.baml
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\MainWindow.baml
+D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\RegistWindow.baml
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\SelectedLessonControl.baml
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\SignUpControl.baml
 D:\ProjectGit\SignInApp\SignInApp\SignInApp\obj\x86\Release\Styles\CheckBox.baml

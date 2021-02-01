@@ -28,8 +28,16 @@ namespace SignInApp
         {
             InitializeComponent();
 
-            this.Width = 640;
+            //this.Width = 640;
+            this.Height = CommDef.Size60;
             mLessonInfo = lessonInfo;
+
+            mLessonInfo.Size18 = CommDef.Size18;
+            mLessonInfo.Size35 = CommDef.Size35;
+            mLessonInfo.Size60 = CommDef.Size60;
+            mLessonInfo.Size90 = CommDef.Size90;
+            mLessonInfo.Size100 = CommDef.Size100;
+            mLessonInfo.Size120 = CommDef.Size120;
             this.DataContext = lessonInfo;
         }
 
@@ -45,6 +53,16 @@ namespace SignInApp
 
     public class LessonInfo
     {
+        public double Size8 { get; set; }
+        public double Size18 { get; set; }
+        public double Size24 { get; set; }
+        public double Size35 { get; set; }
+        public double Size48 { get; set; }
+        public double Size60 { get; set; }
+        public double Size90 { get; set; }
+        public double Size100 { get; set; }
+        public double Size120 { get; set; }
+
         public bool IsChecked { get; set; }             //课程ID
         public long Id { get; set; }                    //课程ID
         public long ClassId { get; set; }               //班级名称

@@ -31,9 +31,20 @@ namespace SignInApp
         {
             InitializeComponent();
 
-            this.Width = 805;
+            //this.Width = 805;
+
             mClassInfo = classInfo;
+            mClassInfo.Size18 = CommDef.Size18;
+            mClassInfo.Size30 = CommDef.Size30;
+            mClassInfo.Size50 = CommDef.Size50;
+            mClassInfo.Size60 = CommDef.Size60;
+            mClassInfo.Size120 = CommDef.Size120;
+            mClassInfo.Size180 = CommDef.Size180;
+            this.Height = CommDef.Size60;
             this.DataContext = classInfo;
+
+
+
 
             if (index == 0)
             {
@@ -68,6 +79,13 @@ namespace SignInApp
 
     public class ClassInfo
     {
+        public double Size18 { get; set; }
+        public double Size30 { get; set; }
+        public double Size50 { get; set; }
+        public double Size60 { get; set; }
+        public double Size120 { get; set; }
+        public double Size180 { get; set; }
+
         public long Id { get; set; }                    //培训班级ID
         public String ClassName { get; set; }           //培训班级名称
         public String StartTime { get; set; }           //培训开始时间

@@ -23,12 +23,27 @@ namespace SignInApp
         public InfoShowControl(InfoDetail infoDetail)
         {
             InitializeComponent();
+            infoDetail.Size16 = CommDef.Size16;
+            infoDetail.Size18 = CommDef.Size18;
+            infoDetail.Size20 = CommDef.Size20;
+            infoDetail.Size27 = CommDef.Size27;
+            infoDetail.Size50 = CommDef.Size50;
+            infoDetail.Size55 = CommDef.Size55;
+            infoDetail.Size277 = CommDef.Size277;
             this.DataContext = infoDetail;
         }
     }
 
     public class InfoDetail : NotificationBase
     {
+        public double Size16 { get; set; }
+        public double Size18 { get; set; }
+        public double Size20 { get; set; }
+        public double Size27 { get; set; }
+        public double Size50 { get; set; }
+        public double Size55 { get; set; }
+        public double Size277 { get; set; }
+
         public BitmapImage InfoImage { get; set; }  //图像
         public string InfoTitle { get; set; }       //title
         public string InfoText { get; set; }        //详细

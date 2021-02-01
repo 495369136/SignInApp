@@ -1,0 +1,68 @@
+﻿<Window x:Class="SignInApp.RegistWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SignInApp"
+        mc:Ignorable="d"
+        Title="注册" Height="450" Width="800" Background="#FF595A5B">
+    <Border x:Name="workarea" BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Center" Height="450" Margin="0,0,0,0" VerticalAlignment="Center" Width="800" Background="#FF595A5B">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="10">
+                <Label x:Name="tip_1" Content="1: 选择文件夹用于存放生成的本地key文件" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+            </Border>
+            <Border Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="10">
+                <Label x:Name="tip_2" Content="2: 将生成的本地key文件提交给厂商，厂商会反馈回来一个license文件" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+            </Border>
+            <Border Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="10">
+                <Label x:Name="tip_3" Content="3: 将厂商提供的license文件导入，完成注册" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+            </Border>
+            <Border Grid.Row="5" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="7">
+                <Label Content="本地Key文件生成目录：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+            </Border>
+            <Border Grid.Row="6" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="7">
+                <TextBox x:Name="computer_info_file" VerticalAlignment="Center" FontSize="26"/>
+            </Border>
+            <Border Grid.Row="6" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="2" Margin="20,0,-20,0">
+                <Button x:Name="make_key_btn" Content="选择文件夹..." FontSize="20"/>
+            </Border>
+            <Border Grid.Row="8" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="7">
+                <Label Content="license文件：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+            </Border>
+            <Border Grid.Row="9" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="7">
+                <TextBox x:Name="license_info_file" VerticalAlignment="Center" FontSize="26"/>
+            </Border>
+            <Border Grid.Row="9" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="2" Margin="20,0,-20,0">
+                <Button x:Name="regist_key_btn" Content="导入license" FontSize="20"/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
