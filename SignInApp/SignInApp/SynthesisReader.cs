@@ -168,12 +168,21 @@ namespace SignInApp
             return nRet;
         }
 
-        public int GetEndGBK(ref string str_end)
+        public int GBK(ref string str_end)
         {
             byte[] end = new byte[250];
             int nRet = GetEnd(end);
             this.trimSpace(end);
             str_end = System.Text.Encoding.GetEncoding("GBK").GetString(end).Replace("\x00", "");
+            return nRet;
+        }
+
+        public int GetBmpPathGBK(ref string str_bmpPath)
+        {
+            byte[] end = new byte[250];
+            int nRet = GetBmpPath(end);
+            this.trimSpace(end);
+            str_bmpPath = System.Text.Encoding.GetEncoding("GBK").GetString(end).Replace("\x00", "");
             return nRet;
         }
 
@@ -218,5 +227,7 @@ namespace SignInApp
         public static extern int GetBegin(byte[] buf); //读取有效期起
         [DllImport("RdCard.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int GetEnd(byte[] buf); //读取有效期止
+        [DllImport("RdCard.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern int GetBmpPath(byte[] buf); //读取图像
     }
 }

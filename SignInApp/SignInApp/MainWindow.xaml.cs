@@ -389,8 +389,10 @@ namespace SignInApp
                 LogHelper.WriteInfoLog("获取身份证信息成功");
                 string name = "";
                 string IDNum = "";
+                //string bmpPath = "";
                 cardRead.GetNameGBK(ref name);
                 cardRead.GetIDNumGBK(ref IDNum);
+                //cardRead.GetBmpPathGBK(ref bmpPath);
                 cardRead.CloseComm();
                 
                 string outMessage = "";

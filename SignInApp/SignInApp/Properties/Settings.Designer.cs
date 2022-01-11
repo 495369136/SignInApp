@@ -25,7 +25,7 @@ namespace SignInApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1:2000/open/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1:2000/open")]
         public string rest_host {
             get {
                 return ((string)(this["rest_host"]));

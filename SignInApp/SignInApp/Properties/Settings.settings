@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="rest_host" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://127.0.0.1:2000/open/</Value>
+      <Value Profile="(Default)">http://127.0.0.1:2000/open</Value>
     </Setting>
     <Setting Name="province" Type="System.String" Scope="User">
       <Value Profile="(Default)">浙江省</Value>
